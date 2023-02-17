@@ -18,12 +18,11 @@ const generate = async (req: NextApiRequest, res: NextApiResponse) => {
   const leap = new Leap(apiKey);
 
   const { data, error } = await leap.generate.generateImage({
-    modelId: MODEL_ID,
-    versionId: VERSION_ID,
-    prompt,
-    width: IMAGE_WIDTH,
-    height: IMAGE_HEIGHT,
-    numberOfImages: 1,
+    modelId: MODEL_ID, // This is the model ID for the album cover generator 
+    prompt, // This is the prompt for the album cover generator
+    width: IMAGE_WIDTH, // This is the width of the image 
+    height: IMAGE_HEIGHT,   // This is the height of the image
+    numberOfImages: 1, // This is the number of images to generate
   });
 
   if (error) {
