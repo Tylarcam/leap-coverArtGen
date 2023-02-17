@@ -25,7 +25,7 @@ const Home = () => {
   const [loading, setLoading] = useState<boolean>(false);
 
   const [images, setImages] = useState<string[]>([
-    "https://generatepotter.com/default.png",
+    "/default.png",
   ]);
 
   const generate = async () => {
@@ -54,14 +54,14 @@ const Home = () => {
   return (
     <>
       <NextSeo
-        title="Generate Potter"
-        description="Generate Potter is a web app that uses the LeapML API to generate images of Harry Potter. It's built with Next.js, Chakra UI, and Leap AI."
+        title="Cover Art Generator"
+        description="Generate Cover Art is a web app that uses the LeapML API to generate images of Harry Potter. It's built with Next.js, Chakra UI, and Leap AI."
       />
       <VStack
         minH="100vh"
         w="100vw"
         spacing={4}
-        bg="#6D051E"
+        bg="#190336"
         px={4}
         paddingBottom={4}
       >
@@ -74,7 +74,7 @@ const Home = () => {
             color="gray.200"
             fontFamily="harryfont"
           >
-            Generate Potter.
+            Flash
           </Heading>
           <Text
             color="gray.300"
@@ -83,7 +83,7 @@ const Home = () => {
             textAlign="center"
             fontFamily="monospace"
           >
-            Enter a prompt like "@harry as a cat" to generate an image.
+            Enter a prompt like "Make me a mottled background" to generate an image.
           </Text>
         </VStack>
 
@@ -122,15 +122,15 @@ const Home = () => {
           Generate
         </Button>
 
-        <Box w={{ base: "full", md: "30rem" }} h="auto">
+        <Box w={{ base: "full", md: "30rem" }} h="full">
           {images.map((image) => (
             <Image
               key={image}
               src={image}
-              alt="Harry Potter"
+              alt="StoneAgeTC"
               rounded="lg"
-              w="full"
-              h={{ base: "3/4", md: "20rem" }}
+              w="512"
+              h= "412"
               objectFit="cover"
               transitionDuration="200ms"
               opacity={loading ? 0.3 : 1}
@@ -161,6 +161,8 @@ const Home = () => {
             </WrapItem>
           ))}
         </Wrap>
+
+
         <HStack
           bg="white"
           p={4}
@@ -174,12 +176,12 @@ const Home = () => {
           bottom={4}
           right={4}
           onClick={() =>
-            window.open("https://github.com/aleemrehmtulla/leap-template")
+            window.open("Github.com/tylarcam")
           }
         >
           <AiFillGithub color="black" />
           <Text fontWeight={"bold"} color={"#1c1c1c"}>
-            Train Your Own Character
+            Star this project on Github
           </Text>
         </HStack>
       </VStack>

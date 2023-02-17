@@ -1,32 +1,32 @@
-const keywordIdentifier = "@harry";
+const keywordIdentifier = "@Album";
 const prompts = [
   {
-    label: "Sci Fi Harry",
+    label: "City",
     prompt:
-      "8k detailed portrait of " +
+      "an album cover " +
       keywordIdentifier +
-      ", futuristic sci-fi style, low-emission-neon, bladerunner movie scene style",
+      "a black and white photo in a city, inspired by Slava Raškaj, harlem renaissance, city high-rise, high rises, high level, 🎨🖌️, idol, ios",
   },
   {
-    label: "Pop Art Harry",
+    label: "Abstract",
     prompt:
-      "8k portrait of " +
+      "an album cover " +
       keywordIdentifier +
-      ", pop art style, incredibly detailed faces, wearing a colorful men's suit, 🎨🖌️, idol, ios",
+      "a black and white photo of a cluster of paint splatters, by Howardena Pindell, generative art, abstract, abstract art, abstract painting",
   },
   {
-    label: "Sketch Book Harry",
+    label: "Conceptual",
     prompt:
-      "a beautiful painting of " +
+      "an album cover " +
       keywordIdentifier +
-      ", mobile game asset, inspired by Eve Ryder, fantasy game spell icon, extremely realistic face, in nature, ios app icon, mourning, singer - songwriter, gameplay video",
+      "inspired by Storm Thorgerson, computer art, detailed product image, unknown pleasures, framed poster ",
   },
   {
-    label: "Psychadelic Harry",
+    label: "Grafitti",
     prompt:
-      "a psychedelic portrait of " +
+      "an album cover " +
       keywordIdentifier +
-      ", vibrant color scheme, highly detailed, in the style of romanticism, cinematic, artstation, moebius, greg rutkowski",
+      "standing in front of a graffiti covered wall,  dribble, detalized new york background, artwork in the style of z.w. gu, dripping tar, low res",
   },
 ];
 
