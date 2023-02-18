@@ -55,7 +55,7 @@ const Home = () => {
     <>
       <NextSeo
         title="Cover Art Generator"
-        description="Generate Cover Art is a web app that uses the LeapML API to generate images of Harry Potter. It's built with Next.js, Chakra UI, and Leap AI."
+        description="Generate Cover Art is a web app that uses the LeapML API to generate images of background art. It's built with Next.js, Chakra UI, and Leap AI."
       />
       <VStack
         minH="100vh"
@@ -82,6 +82,7 @@ const Home = () => {
             w={{ base: "full", md: "lg" }}
             textAlign="center"
             fontFamily="monospace"
+            p= {4}
           >
             Enter a prompt like "Make me a mottled background" to generate an image.
           </Text>
@@ -125,13 +126,14 @@ const Home = () => {
         <Box w={{ base: "full", md: "30rem" }} h="full">
           {images.map((image) => (
             <Image
+            // I want to make the box shjow up horizontally
               key={image}
               src={image}
               alt="StoneAgeTC"
               rounded="lg"
-              w="512"
-              h= "412"
-              objectFit="cover"
+              w="full"
+              h= "full"
+              objectFit="contain"
               transitionDuration="200ms"
               opacity={loading ? 0.3 : 1}
             />
@@ -142,7 +144,7 @@ const Home = () => {
           {prompts.map((prompt) => (
             <WrapItem key={prompt.label}>
               <HStack
-                w="fit"
+                w="full"
                 _hover={{ opacity: 0.8 }}
                 _active={{ transform: "scale(0.98)", opacity: 0.7 }}
                 transitionDuration="200ms"
@@ -176,7 +178,7 @@ const Home = () => {
           bottom={4}
           right={4}
           onClick={() =>
-            window.open("Github.com/tylarcam")
+            window.open("https://github.com/Tylarcam")
           }
         >
           <AiFillGithub color="black" />

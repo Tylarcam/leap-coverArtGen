@@ -1,15 +1,17 @@
 import { NextApiRequest, NextApiResponse } from "next";
 import { Leap } from "@leap-ai/sdk";
 
+
 const MODEL_ID = "cb1673da-55f3-4ec8-bfbc-c9375bfcb4e8";
-const VERSION_ID = "734a9180-2c4a-4390-a933-75432c5a9f13";
-const IMAGE_WIDTH = 600;
-const IMAGE_HEIGHT = 400;
+const VERSION_ID = process.env.LEAP_VERSION_ID as string;
+const IMAGE_WIDTH = 1000;
+const IMAGE_HEIGHT = 1000;
 
 const generate = async (req: NextApiRequest, res: NextApiResponse) => {
   const prompt = req.body.prompt as string;
   const apiKey = process.env.LEAP_API_KEY as string;
-  console.log('One sec grabbing some dope art for you...')
+  
+  console.log('One sec grabbing some dope art for you...', prompt)
   if (!prompt || prompt.length === 0 || !apiKey) {
     res.status(400).json({ error: "Invalid request. Check key and prompt." });
     return;
@@ -22,7 +24,7 @@ const generate = async (req: NextApiRequest, res: NextApiResponse) => {
     prompt, // This is the prompt for the album cover generator
     width: IMAGE_WIDTH, // This is the width of the image 
     height: IMAGE_HEIGHT,   // This is the height of the image
-    numberOfImages: 1, // This is the number of images to generate
+    numberOfImages: 3, // This is the number of images to generate
   });
 
   if (error) {
