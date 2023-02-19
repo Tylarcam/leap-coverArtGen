@@ -2,25 +2,13 @@
 import { useState } from "react";
 
 import {
-  Accordion,
-  AccordionItem,
-  AccordionButton,
-  AccordionPanel,
-  AccordionIcon,
   Box,
   Card,
   Button,
-  InputGroup,
-  InputRightElement,
-  Icon,
-  Select,
   Heading,
   HStack,
   Image,
   Input,
-  Slider, SliderFilledTrack, SliderThumb, SliderTrack,
-  Spinner,
-  Tabs, TabList, TabPanels, Tab, TabPanel,
   Text,
   VStack,
   Wrap,
@@ -36,7 +24,6 @@ import prompts from "helpers/prompts";
 const Home = () => {
   const [prompt, setPrompt] = useState<string>("");
   const [loading, setLoading] = useState<boolean>(false);
-  const [descriptor, setDescriptor] = useState<string>("");
 
   const [images, setImages] = useState<string[]>([
     "/default.png",
