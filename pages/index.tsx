@@ -2,13 +2,25 @@
 import { useState } from "react";
 
 import {
+  Accordion,
+  AccordionItem,
+  AccordionButton,
+  AccordionPanel,
+  AccordionIcon,
   Box,
+  Card,
   Button,
+  InputGroup,
+  InputRightElement,
+  Icon,
+  Select,
   Heading,
   HStack,
   Image,
   Input,
+  Slider, SliderFilledTrack, SliderThumb, SliderTrack,
   Spinner,
+  Tabs, TabList, TabPanels, Tab, TabPanel,
   Text,
   VStack,
   Wrap,
@@ -20,9 +32,11 @@ import { NextSeo } from "next-seo";
 
 import prompts from "helpers/prompts";
 
+
 const Home = () => {
   const [prompt, setPrompt] = useState<string>("");
   const [loading, setLoading] = useState<boolean>(false);
+  const [descriptor, setDescriptor] = useState<string>("");
 
   const [images, setImages] = useState<string[]>([
     "/default.png",
@@ -49,7 +63,9 @@ const Home = () => {
     const uris = image.images.map((image: { uri: string }) => image.uri);
     setImages(uris);
     setLoading(false);
-  };
+  }  
+
+  
 
   return (
     <>
@@ -57,6 +73,8 @@ const Home = () => {
         title="Cover Art Generator"
         description="Generate Cover Art is a web app that uses the LeapML API to generate images of background art. It's built with Next.js, Chakra UI, and Leap AI."
       />
+
+
       <VStack
         minH="100vh"
         w="100vw"
@@ -65,6 +83,8 @@ const Home = () => {
         px={4}
         paddingBottom={4}
       >
+
+
         <VStack spacing={1}>
           <Heading
             pt={{
@@ -82,64 +102,23 @@ const Home = () => {
             w={{ base: "full", md: "lg" }}
             textAlign="center"
             fontFamily="monospace"
-            p= {4}
+            p={4}
           >
-            Enter a prompt like "Make me a mottled background" to generate an image.
+            Unlock your creative potential, Flash is a tool for generating art that reflects your unique vision and style.
           </Text>
         </VStack>
+         
 
-        <Input
-          w={{ base: "full", md: "30rem" }}
-          py={4}
-          color="gray.100"
-          focusBorderColor="gray.100"
-          variant="outline"
-          onChange={(e) => setPrompt(e.target.value)}
-          value={prompt}
-          onKeyPress={(e) => {
-            if (e.key === "Enter") {
-              generate();
-            }
-          }}
-          fontFamily="monospace"
-          placeholder="Enter your image generation prompt here"
-        />
-
-        <Button
-          w={{ base: "full", md: "30rem" }}
-          _hover={loading ? {} : { opacity: 0.8 }}
-          _active={loading ? {} : { transform: "scale(0.98)", opacity: 0.7 }}
-          transitionDuration="200ms"
-          bg="#C99D25"
-          color="white"
-          p={2}
-          fontFamily="monospace"
-          rounded="lg"
+        <Text
+          color="gray.300"
           fontSize="lg"
-          key={prompt}
-          onClick={() => generate()}
-          isLoading={loading}
+          w={{ base: "full", md: "lg" }}
+          textAlign="center"
+          fontFamily="monospace"
+          p={4}
         >
-          Generate
-        </Button>
-
-        <Box w={{ base: "full", md: "30rem" }} h="full">
-          {images.map((image) => (
-            <Image
-            // I want to make the box shjow up horizontally
-              key={image}
-              src={image}
-              alt="StoneAgeTC"
-              rounded="lg"
-              w="full"
-              h= "full"
-              objectFit="contain"
-              transitionDuration="200ms"
-              opacity={loading ? 0.3 : 1}
-            />
-          ))}
-        </Box>
-
+          Explore some pre-selected styles or describe your own
+        </Text>
         <Wrap w={{ base: "full", md: "30rem" }} justify="center">
           {prompts.map((prompt) => (
             <WrapItem key={prompt.label}>
@@ -163,6 +142,67 @@ const Home = () => {
             </WrapItem>
           ))}
         </Wrap>
+
+        
+
+
+     
+
+
+        <Input
+          w={{ base: "full", md: "30rem" }}
+          py={4}
+          color="gray.100"
+          focusBorderColor="gray.100"
+          variant="outline"
+          onChange={(e) => setPrompt(e.target.value)}
+          value={prompt}
+          onKeyPress={(e) => {
+            if (e.key === "Enter") {
+              generate();
+            }
+          }}
+          fontFamily="monospace"
+          placeholder="Concrete Roses ... "
+        />
+       
+  
+
+        <Button
+          w={{ base: "full", md: "30rem" }}
+          _hover={loading ? {} : { opacity: 0.8 }}
+          _active={loading ? {} : { transform: "scale(0.98)", opacity: 0.7 }}
+          transitionDuration="200ms"
+          bg="#C99D25"
+          color="white"
+          p={2}
+          fontFamily="monospace"
+          rounded="lg"
+          fontSize="lg"
+          key={prompt}
+          onClick={() => generate()}
+          isLoading={loading}
+        >
+          Generate
+        </Button>
+
+        <Box w={{ base: "full", md: "30rem" }} h="full" display="flex" flexDirection="row" alignItems={"center"} justifyContent="center">
+          {images.map((image) => (
+            <Image
+              key={image}
+              src={image}
+              alt="StoneAgeTC"
+              rounded="lg"
+              flex="1 0 25%"
+              w="full"
+              h="full"
+              objectFit="contain"
+              transitionDuration="200ms"
+              opacity={loading ? 0.3 : 1}
+            />
+          ))}
+        </Box>
+
 
 
         <HStack

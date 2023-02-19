@@ -6,3 +6,15 @@
   font-style: normal;
   font-display: swap;
 }
+    /*Body Color of text white
+
+*/
+body {
+  background-color: #000000;
+  color: #ffffff;
+  font-family: "harryfont";
+  font-size: 1.5rem;
+  line-height: 1.5;
+  margin: 0;
+  padding: 0;
+}

@@ -1,35 +1,43 @@
-const keywordIdentifier = "@Album";
+const modelIdentifier = "@Album";
 
 const prompts = [
   {
-    label: "City",
+    label: "Abstract Expressionism",
     prompt:
-    keywordIdentifier +  
-    " an album cover " +
-     
-      " a black and white photo in a city, inspired by Slava Raškaj, harlem renaissance, city high-rise, high rises, high level, 🎨🖌️, idol, ios",
+      modelIdentifier +
+      " cover art," + 
+      " art movement in American painting, developed in New York City in the 1940s, generative art, abstract, abstract art, abstract painting",
+
   },
   {
-    label: "Abstract",
+    label: "Graffiti Art",
     prompt:
-      " an album cover " +
-      keywordIdentifier +
-      " paint splatters a black and white photo of a cluster of paint splatters, by Howardena Pindell, generative art, abstract, abstract art, abstract painting",
+      modelIdentifier +
+      " cover art," +
+      " graffiti covered wall, dribble, detalized new york background, artwork in the style of z.w. gu, dripping tar, low res, advanced Graffiti in future street art",
   },
   {
-    label: "Conceptual",
+    label: "Installation Art",
     prompt:
-      " an album cover " +
-      keywordIdentifier +
-      " inspired by Storm Thorgerson, computer art, detailed product image, unknown pleasures, framed poster ",
+      modelIdentifier +
+      " cover art,"+
+      " 3d abstract object sticks to the triptych wall, fine details, high res, wall art paint that lasts forever and never gets boring ",
   },
   {
-    label: "Grafitti",
+    label: "Conceptual Art",
     prompt:
-      " an album cover " +
-      keywordIdentifier +
-      " portrait sprayed graffiti covered wall, dribble, detalized new york background, artwork in the style of z.w. gu, dripping tar, low res",
+      modelIdentifier +
+      " cover art inspired by " +
+      "Storm Thorgerson, computer art, detailed product image, unknown pleasures, framed poster ",
   },
+  {
+    label: "Digital Art",
+    prompt:
+      modelIdentifier +
+      " cover art inspired by," +
+      " pixar art 3d, cinematic,"
+  },
+
 ];
 
 export default prompts;
