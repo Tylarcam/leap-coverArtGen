@@ -3,7 +3,6 @@ import { Leap } from "@leap-ai/sdk";
 
 
 const MODEL_ID = "cb1673da-55f3-4ec8-bfbc-c9375bfcb4e8";
-const VERSION_ID = process.env.LEAP_VERSION_ID as string;
 const IMAGE_WIDTH = 1000;
 const IMAGE_HEIGHT = 1000;
 
