@@ -28,7 +28,7 @@ const prompts = [
     label: "Conceptual Art",
     prompt:
       modelIdentifier +
-      " cover art inspired by " +
+      " cover art inspired by" +
       " Storm Thorgerson, computer art, detailed product image, unknown pleasures, framed poster ",
   },
   {
