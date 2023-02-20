@@ -6,6 +6,7 @@ const prompts = [
     prompt:
       modelIdentifier +
       " cover art," + 
+      " Yellow, Red, White" +
       " art movement in American painting, developed in New York City in the 1940s, generative art, abstract, abstract art, abstract painting",
 
   },
