@@ -28,13 +28,13 @@ const prompts = [
     prompt:
       modelIdentifier +
       " cover art inspired by " +
-      "Storm Thorgerson, computer art, detailed product image, unknown pleasures, framed poster ",
+      " Storm Thorgerson, computer art, detailed product image, unknown pleasures, framed poster ",
   },
   {
     label: "Digital Art",
     prompt:
       modelIdentifier +
-      " cover art inspired by," +
+      " Space Invaders inspired by Marvle Comics," +
       " pixar art 3d, cinematic,"
   },
 

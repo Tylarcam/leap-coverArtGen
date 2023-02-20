@@ -50,9 +50,9 @@ const Home = () => {
     const uris = image.images.map((image: { uri: string }) => image.uri);
     setImages(uris);
     setLoading(false);
-  }  
+  }
+    
 
-  
 
   return (
     <>
