@@ -34,8 +34,11 @@ const prompts = [
     label: "Digital Art",
     prompt:
       modelIdentifier +
-      " Space Invaders inspired by Marvle Comics," +
-      " pixar art 3d, cinematic,"
+      " Digital Art," +
+      " Man walking in rain," +
+      " pixar art 3d, cinematic," + 
+      "sunset, beautiful light, golden hour, full of colour, cinematic lighting, trending on artstation, 4k, hyperrealistic, focused, extreme details, unreal engine 5"
+      
   },
 
 ];
