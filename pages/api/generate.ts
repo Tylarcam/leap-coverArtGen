@@ -3,14 +3,15 @@ import { Leap } from "@leap-ai/sdk";
 
 
 const MODEL_ID = "cb1673da-55f3-4ec8-bfbc-c9375bfcb4e8";
-const IMAGE_WIDTH = 600;
-const IMAGE_HEIGHT = 400;
+const IMAGE_WIDTH = 450;
+const IMAGE_HEIGHT = 450;
+
 
 const generate = async (req: NextApiRequest, res: NextApiResponse) => {
   const prompt = req.body.prompt as string;
   const apiKey = process.env.LEAP_API_KEY as string;
   
-  console.log('One sec grabbing some dope art for you...', prompt)
+  console.log('One sec grabbing some dope art for you...')
   if (!prompt || prompt.length === 0 || !apiKey) {
     res.status(400).json({ error: "Invalid request. Check key and prompt." });
     return;
@@ -35,3 +36,4 @@ const generate = async (req: NextApiRequest, res: NextApiResponse) => {
 };
 
 export default generate;
+
