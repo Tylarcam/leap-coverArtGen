@@ -7,7 +7,7 @@ const App = ({ Component, pageProps }: AppProps) => {
   return (
     <ChakraProvider>
       <Component {...pageProps} />
-      <Analytics/>
+      <Analytics />
     </ChakraProvider>
   );
 };
